@@ -4,7 +4,7 @@
 
 **Rails new** has many options. Use 👉```$ rails new --help``` to see all list. We will create an app with **RSpec** tests and **PostgreSQL** database.
 * navigate to folder that will contain project and write to console: ```$ rails new <appname> --database=postgresql -T``` <br>flag **-T** required to skip default test generation. 
-
+<br>
 
 ### 🗃Configure pg
 
@@ -35,8 +35,9 @@
    * run ```$ rails db:create``` in terminal
  
    * run ```$ rails s``` (if you have no errors go next, if you have an error use Google to solve it)
-   
- ### 📝Configure RSpec
+<br>
+
+ ### 📝Configure RSpec 
  
    **🟢Rspec**
  
@@ -48,7 +49,8 @@
    ```
    * run ```$ bundle install```
 
-   * run ```$ rails generate rspec:install```
+   * run ```$ rails generate rspec:install``` 
+   <hr>
 
    **🔵Database Cleaner**
 
@@ -78,7 +80,9 @@
       DatabaseCleaner.clean
     end
    end
-   ```
+   ``` 
+   <hr>
+ 
   **🟣Shoulda**
    
   * to use methods provided in Ruby on Rails framework add to _Gemfile_:
@@ -97,9 +101,11 @@
     end
   end
   ```
+  <hr>
+
   **🟡FactoryBot**
   
-  * to avoid db requiests during testing we can use factories, add to _Gemfile_:
+  * to avoid db requests during testing we can use factories, add to _Gemfile_:
   ```
   group :development, :test do
     gem 'factory_bot_rails'
@@ -114,7 +120,8 @@
   end
   ```
   * run ```$ rspec spec``` (if you have no errors go next, if you have an error use Google to solve it)
-
+ <br>
+ 
 ### 🪄Configure Rubocop
 
  * add to _Gemfile_:
