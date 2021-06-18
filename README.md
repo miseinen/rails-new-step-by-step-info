@@ -128,7 +128,7 @@
 
  * run ```$ rubucop --require rubocop-rails``` and fix rubocop⚠️warnings (or edit config files)
  
- * for disable **missing frozen string literal comment** add to _.rubocop.yml_:
+ * to disable **missing frozen string literal comment** add to _.rubocop.yml_:
  ```
   Style/FrozenStringLiteralComment:
    Enabled: false
