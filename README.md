@@ -3,14 +3,25 @@
 ### Create new app
 
 **Rails new** has many options. Use 👉```$ rails new --help``` to see all list. We will create an app with **RSpec** tests and **PostgreSQL** database.
-* navigate to folder that will contain project and write to console: ```$ rails new <appname> --database=postgresql -T``` <br>flag **-T** required to skip default test generation. 
-<br>
+* navigate to folder that will contain project and write to console: <br>
+```
+rails new <appname> --database=postgresql -T
+``` 
+<br>flag **-T** required to skip default test generation. 
+<br><br>
 
 ### 🗃Configure pg
 
-  * ```$ sudo apt install postgresql postgresql-contrib libpq-dev``` (required libs to work with pg)
+  * install libs required to work with pg
+  ```
+  sudo apt install postgresql postgresql-contrib libpq-dev
+  ```
 
-  * ```$ sudo -u postgres createuser <username>``` press Enter and enter a 🔑password.
+  * create new postgres user
+  ```
+  sudo -u postgres createuser <username>
+  ``` 
+  * enter a 🔑password.<br>
  
   * configure _config/database.yml_: 
   ```...
