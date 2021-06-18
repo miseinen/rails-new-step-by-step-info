@@ -1,16 +1,16 @@
-## Tutorial to create rails app step-by-step
+## 📋Tutorial to create rails app step-by-step
 
 ### Create new app
 
-**Rails new** has many options. Use ```$ rails new --help``` to see all list. We will create an app with **RSpec** tests and **PostgreSQL** database.
-* navigate to folder that will contain project and write to console: ```$ rails new <appname> --database=postgresql -T``` Flag **-T** required to skip default test generation. 
+**Rails new** has many options. Use 👉```$ rails new --help``` to see all list. We will create an app with **RSpec** tests and **PostgreSQL** database.
+* navigate to folder that will contain project and write to console: ```$ rails new <appname> --database=postgresql -T``` <br>flag **-T** required to skip default test generation. 
 
 
-### Configure pg
+### 🗃Configure pg
 
   * ```$ sudo apt install postgresql postgresql-contrib libpq-dev``` (required libs to work with pg)
 
-  * ```$ sudo -u postgres createuser <username>``` press Enter and enter a password.
+  * ```$ sudo -u postgres createuser <username>``` press Enter and enter a 🔑password.
  
   * configure _config/database.yml_: 
   ```...
@@ -28,17 +28,17 @@
         database: appname_development
       ...
    ```
-   * open _Gemfile_ and add ```gem 'dotenv-rails', :groups => [:development, :test]``` (it required to secure password usage)
+   * open _Gemfile_ and add ```gem 'dotenv-rails', :groups => [:development, :test]``` (it required to 🔐secure password usage)
 
-   * create file _.env_ in root directory and add ```APPNAME_DATABASE_PASSWORD=<your_db_password``` ((!)add _.env_ to _.gitignore_)
+   * create file _.env_ in root directory and add ```APPNAME_DATABASE_PASSWORD=<your_db_password``` (‼️add _.env_ to _.gitignore_)
 
    * run ```$ rails db:create``` in terminal
  
    * run ```$ rails s``` (if you have no errors go next, if you have an error use Google to solve it)
    
- ### Configure RSpec
+ ### 📝Configure RSpec
  
-   **Rspec**
+   **🟢Rspec**
  
    * add to _Gemfile_ 
    ```
@@ -50,7 +50,7 @@
 
    * run ```$ rails generate rspec:install```
 
-   **Database Cleaner**
+   **🔵Database Cleaner**
 
    * to keep project's test database clean between test runs add to _Gemfile_:
    ```
@@ -81,7 +81,7 @@
     end
    end
    ```
-  **Shoulda**
+  **🟣Shoulda**
    
   * to use methods provided in Ruby on Rails framework add to _Gemfile_:
   ```
@@ -99,7 +99,7 @@
     end
   end
   ```
-  **FactoryBot**
+  **🟡FactoryBot**
   
   * to avoid db requiests during testing we can use factories, add to _Gemfile_:
   ```
@@ -117,3 +117,23 @@
   ```
   * run ```$ rspec spec``` (if you have no errors go next, if you have an error use Google to solve it)
 
+### 🪄Configure Rubocop
+
+ * add to _Gemfile_:
+ ```
+  gem 'rubocop-rails', require: false
+ ```
+ 
+ * create [**rubocop config files**](https://gist.github.com/dsandstrom/d9da0be5003c2217969a)
+ 
+ * add to config files ```require: rubocop-rails```
+
+ * run ```$ rubucop --require rubocop-rails``` and fix rubocop⚠️warnings (or edit config files)
+ 
+ * for disable **missing frozen string literal comment** add to _.rubocop.yml_:
+ ```
+  Style/FrozenStringLiteralComment:
+   Enabled: false
+ ```
+
+...✏️to be continued
