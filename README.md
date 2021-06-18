@@ -63,9 +63,7 @@
    * configure _spec/rails_helper.rb_:
    ```
    RSpec.configure do |config|
-    # some
-    # other
-    # configuration
+    ...
     config.before(:suite) do
       DatabaseCleaner.strategy = :truncation
       DatabaseCleaner.clean_with(:truncation)
@@ -111,7 +109,7 @@
   * configure _spec/rails_helper.rb_:
   ```
   RSpec.configure do |config|
-  # some other configuration
+    ...
     config.include FactoryBot::Syntax::Methods
   end
   ```
