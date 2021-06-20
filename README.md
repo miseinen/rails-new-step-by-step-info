@@ -19,7 +19,7 @@ rails new <appname> --database=postgresql -T
 
   * create new postgres user
   ```
-  sudo -u postgres createuser <username>
+  sudo -u postgres psql -c "ALTER USER <user> PASSWORD '<password>';"
   ``` 
   * enter a 🔑password.<br>
  
