@@ -142,9 +142,19 @@ rails new <appname> --database=postgresql -T
  
  * create [**rubocop config files**](https://gist.github.com/dsandstrom/d9da0be5003c2217969a)
  
- * add to config files ```require: rubocop-rails```
+ * configure [**rubocop-rspec**](https://github.com/rubocop/rubocop-rspec)
+ 
+ * add to config files 
+ ```
+  require: 
+    - rubocop-rails
+    - rubocop-rspec
+ ```
 
- * run ```$ rubucop --require rubocop-rails``` and fix rubocop⚠️warnings (or edit config files)
+ * run and fix rubocop⚠️warnings (or edit config files)
+ ```
+ rubocop --require rubocop-rails --require rubocop-rspec
+ ``` 
  
  * to disable **missing frozen string literal comment** add to _.rubocop.yml_:
  ```
